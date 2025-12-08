@@ -4,17 +4,17 @@ def armstrong_calculation(number):
     digit_count = 0
 
     # Calculating Number of individual digits
-    temporary_number = number
-    while temporary_number > 0:
+    working_number = number
+    while working_number > 0:
         digit_count = digit_count + 1
-        temporary_number = temporary_number // 10
+        working_number = working_number // 10
 
     # Finding Armstrong Number
-    temporary_number = number
-    for number in range(1, temporary_number + 1):
-        digit = temporary_number % 10
+    working_number = number
+    for number in range(1, working_number + 1):
+        digit = working_number % 10
         armstrong_sum = armstrong_sum + (digit ** digit_count)
-        temporary_number //= 10
+        working_number //= 10
     return armstrong_sum
 
 # End of Function

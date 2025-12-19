@@ -1,66 +1,48 @@
-# ITT_Learn_and_Code
+# SOLID Principles - Learn and Code
 
-**ITT_Learn_and_Code** is a structured learning and development repository built to help developers understand real-world software concepts through simple, clear, and practical examples.  
-The goal is to make complex topics easier by demonstrating them with hands-on code, best practices, and explanation-driven learning.
-
----
-
-## 🚀 What This Repository Offers
-
-- **Real-world coding examples**
-- **Clean and scalable code patterns**
-- **Step-by-step explanations for clarity**
-- **AI, ML, DevOps, and backend code samples**
-- **Debugging guides and architecture notes**
-- **Best practices for Python, APIs, Docker, and more**
+This branch contains practical examples demonstrating the five SOLID principles of object-oriented design. Each principle is organized in its own folder with real-world code samples extracted from production applications.
 
 ---
 
-## 📘 Purpose
+## What This Branch Contains
 
-This repository is created to:
-- Provide a single place to **learn and build together**  
-- Break down difficult concepts into **easy-to-understand examples**  
-- Help new and experienced developers practice **real industry-level coding standards**  
+This repository showcases how SOLID principles are applied in actual codebases. Each folder contains Python files that demonstrate a specific principle, along with a README explaining why each file is a good example.
 
 ---
 
-## 🧩 Who Is This For?
+## Folder Structure
 
-- Students  
-- Beginners in coding  
-- Developers practicing for interviews  
-- Engineers exploring new technologies  
-- Anyone who wants to learn by doing
+### Single_Responsibility_Principle
 
----
+Contains examples where each class or module has exactly one reason to change. Files include repository classes for specific database tables, a dedicated email service, and a focused transcript extraction module.
 
-## 📂 Contents (Examples)
+### Open_Closed_Principle
 
-- 🔹 Python utilities & scripts  
-- 🔹 API development examples  
-- 🔹 Docker & containerization demos  
-- 🔹 AI/ML small projects  
-- 🔹 Debugging & error explanation snippets  
-- 🔹 System design notes  
-- 🔹 Best coding practices & patterns  
+Contains examples of code that is open for extension but closed for modification. Files include a factory pattern for creating agents, an extensible exception hierarchy, and a registry pattern for managing tools.
 
-*(Actual content will grow over time.)*
+### Liskov_Substitution_Principle
 
----
+Contains examples where derived classes can substitute their base classes without breaking functionality. Files include a base repository with consistent interfaces, API client with uniform error handling, and properly composed repository implementations.
 
-## 🤝 Contribution
+### Interface_Segregation_Principle
 
-Contributions are welcome!  
-Feel free to submit pull requests, open issues, or suggest new topics to cover.
+Contains examples where clients depend only on the interfaces they need. Files include focused helper functions, specific service getters, and modules that import only required functionality.
+
+### Dependency_Inversion_Principle
+
+Contains examples where high-level modules depend on abstractions rather than concrete implementations. Files include services that accept repository instances through constructors and validators that rely on configuration abstractions.
 
 ---
 
-## ⭐ Support
+## How to Use This Repository
 
-If you find this helpful, give the repository a **star** — it helps others discover it and supports future updates.
+1. Navigate to any SOLID principle folder
+2. Read the principle-specific README file for context
+3. Review the code files to see practical implementations
+4. Use these patterns as references when designing your own systems
 
 ---
 
-### **Learn. Build. Improve. Repeat.**
-**ITT_Learn_and_Code**
+## Purpose
+
+This branch serves as a learning resource for developers who want to understand how SOLID principles translate from theory to practice. The examples are drawn from real applications, making them more valuable than abstract textbook examples.

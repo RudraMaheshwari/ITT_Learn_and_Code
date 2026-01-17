@@ -9,9 +9,12 @@ class PaymentProcessor:
     """Payment processor for handling payment transactions."""
     
     MIN_AMOUNT = Decimal("0.01")
+    MAX_PAYMENT_AMOUNT = Decimal("5000")
     MAX_RETRIES = 2
     PAYMENT_SUCCESS = "Payment successful"
     PAYMENT_FAILED = "Payment failed"
+    INITIAL_ATTEMPT = 0
+    TIMESTAMP_MULTIPLIER = 1000
 
     def __init__(self, logger: Logger, notifier: NotificationService) -> None:
         """Initialize the payment processor."""
@@ -23,7 +26,7 @@ class PaymentProcessor:
         """Process a payment request."""
         self._validate(request)
         
-        attempt = 0
+        attempt = self.INITIAL_ATTEMPT
         while attempt < self.MAX_RETRIES:
             try:
                 self._execute(request)
@@ -48,7 +51,7 @@ class PaymentProcessor:
         """Execute the payment."""
         self.logger.log(f"Executing payment of {request.amount}")
         
-        if request.amount > Decimal("5000"):
+        if request.amount > self.MAX_PAYMENT_AMOUNT:
             raise PaymentException("Limit exceeded")
 
     def _record(self, request: PaymentRequest) -> None:
@@ -65,4 +68,4 @@ class PaymentProcessor:
 
     def _generate_id(self) -> str:
         """Generate a unique transaction ID."""
-        return f"TXN-{int(datetime.now().timestamp() * 1000)}"
+        return f"TXN-{int(datetime.now().timestamp() * self.TIMESTAMP_MULTIPLIER)}"

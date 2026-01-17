@@ -4,6 +4,8 @@ from repositories import OrderRepository
 class OrderProcessor:
     """ Order processor """
 
+    MIN_ORDER_AMOUNT = 0
+
     def __init__(self):
         """ Initializes the order processor """
         self.payment_gateway = PaymentGatewayService()
@@ -47,7 +49,7 @@ class OrderProcessor:
 
     def _validate_order(self, order):
         """ Validates the order """
-        if not order or not order.get("items") or order.get("total_amount", 0) <= 0:
+        if not order or not order.get("items") or order.get("total_amount", 0) <= self.MIN_ORDER_AMOUNT:
             raise ValueError("Invalid order")
 
     async def _process_payment(self, order):

@@ -1,7 +1,9 @@
 import random
 from input_handler import read_initial_guess, read_retry_guess
-from validation import is_valid_guess
+from validation import is_valid_guess, MIN_GUESS, MAX_GUESS
 from game_rules import is_too_low, is_too_high, is_correct_guess
+
+INITIAL_GUESS_COUNT = 0
 
 def get_valid_guess():
     """Gets a valid guess from the user."""
@@ -22,8 +24,8 @@ def provide_hint(guess, target_number):
 
 def play_number_guessing_game():
     """Plays the number guessing game."""
-    target_number = random.randint(1, 100)
-    guess_count = 0
+    target_number = random.randint(MIN_GUESS, MAX_GUESS)
+    guess_count = INITIAL_GUESS_COUNT
 
     while True:
         guess = get_valid_guess()

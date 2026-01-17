@@ -4,92 +4,76 @@
 
 ### 1. Redundant Comments
 
-Examples:
+Comments that restate what the code clearly does.
 
-- "Check if order is null"
-- "Validate the order"
-- "Process payment"
+**Examples:**
 
-These comments restated what the code already made obvious.
-
-Refactoring:
-Replaced by clear function and variable names.
+- "Check if order is null" (for `if (order == null)`)
+- "Validate the order" (for `IsValidOrder(order)`)
+- "Process payment" (for `_paymentGateway.ProcessPayment(...)`)
+- "Check inventory"
+- "If no inventory, return failur"
+- "Reserve inventory"
+- "Check if payment succeeded"
+- "Update inventory"
+- "Send confirmation email"
+- "Return success"
+- "Payment failed, release inventory"
+- "Return failure"
+- "Log the error"
+- "Throw it"
 
 ---
 
 ### 2. Noise Comments
 
-Examples:
+Comments that add no information and clutter the code, often summarizing a method or block trivially.
 
-- "This method processes an order"
-- "Gets order by ID"
-- "Saves the order"
+**Examples:**
 
-These added no new information and cluttered the code.
-
-Refactoring:
-Removed and replaced with self-descriptive method names.
+- "This method processes an order" (above `ProcessOrder`)
+- "Gets order by ID" (above `GetOrderById`)
+- "Saves the order" (above `SaveOrder`)
+- "Something went wrong" (in catch block)
 
 ---
 
 ### 3. Misleading Comments
 
-Example:
+Comments that don't match the code or are confusing.
 
-- Multiple inventory checks with conflicting comments
+**Example:**
 
-Refactoring:
-Logic was simplified and comments removed to avoid confusion.
+- "Fix this later" (if not actually fixed or if logic is fine but comment is left)
+- _Note: In the provided snippet, `// If no inventory, return failur` contains a typo and states the obvious._
 
 ---
 
 ### 4. TODO Comments
 
-Example:
+Markers for future work left in production code.
 
-- "TODO: Fix this later"
+**Example:**
 
-Refactoring:
-Validation logic was implemented properly, removing the need for TODO.
+- "TODO: Fix this later" (inside `IsValidOrder`)
 
 ---
 
 ### 5. Journal / Attribution Comments
 
-Example:
+Comments tracking who changed what and when.
 
-- "Added by John on 12/15/2023"
+**Examples:**
 
-Refactoring:
-Removed — version control should track authorship.
+- "Added by John on 12/15/2023 - needed for the new feature"
+- "John says we need to refund here"
 
 ---
 
-### 6. Overly Emotional Comments
+### 6. Overly Emotional / Emphatic Comments
 
-Example:
+Comments that express emotion or use excessive formatting to emphasize importance.
+
+**Example:**
 
 - "This is important!!!"
-
-Refactoring:
-Importance is expressed through code structure, not punctuation.
-
----
-
-## Good Comments Kept
-
-Only comments explaining:
-
-- Why something is done
-- Business intent
-
-All mechanical explanations were removed.
-
----
-
-## Key Learning
-
-Good code should be self-explanatory.
-Comments should clarify intent, not repeat logic.
-Bad comments increase maintenance cost and hide design problems.
-Refactoring code often eliminates the need for comments entirely.

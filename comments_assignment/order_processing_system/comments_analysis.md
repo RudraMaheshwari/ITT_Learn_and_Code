@@ -35,6 +35,7 @@ Comments that add no information and clutter the code, often summarizing a metho
 - "Gets order by ID" (above `GetOrderById`)
 - "Saves the order" (above `SaveOrder`)
 - "Something went wrong" (in catch block)
+- "Implementation here" (in `GetOrderById`, `SaveOrder`)
 
 ---
 

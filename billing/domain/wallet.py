@@ -13,10 +13,6 @@ class Wallet:
         """Reset the balance of the wallet"""
         self._balance = new_value
 
-    def debit(self, amount: float) -> None:
-        """Debit the wallet"""
-        self._balance -= amount
-
     def try_debit(self, amount: float) -> bool:
         """Try to debit the wallet"""
         if self._balance >= amount:

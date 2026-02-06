@@ -1,4 +1,4 @@
-from billing.workflows.collect_payment import collect_payment
+from billing.workflows.collect_payment import start_payment_flow
 
 def get_initial_balance() -> float:
     """Prompt the user for the initial wallet balance."""
@@ -11,4 +11,4 @@ def get_initial_balance() -> float:
 
 if __name__ == "__main__":
     balance = get_initial_balance()
-    collect_payment(initial_balance=balance)
+    start_payment_flow(initial_balance=balance)

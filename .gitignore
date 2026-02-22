@@ -1,0 +1,54 @@
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+## Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+## Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+eggs/
+wheels/
+pip-wheel-metadata/
+
+## Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+## Unit test / coverage reports
+.tox/
+.nox/
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.hypothesis/
+
+## Type checkers / linters
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+## Notebooks
+.ipynb_checkpoints/
+
+## IDEs / editors
+.vscode/
+.idea/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+.csv
+.json
+.xml

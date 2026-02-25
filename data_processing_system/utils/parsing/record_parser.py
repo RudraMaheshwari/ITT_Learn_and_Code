@@ -1,6 +1,5 @@
 from data_processing_system.domain.record import Record
-
-MINIMUM_FIELD_COUNT = 3
+from data_processing_system.config.constants import MINIMUM_FIELD_COUNT
 
 class RecordParser:
 

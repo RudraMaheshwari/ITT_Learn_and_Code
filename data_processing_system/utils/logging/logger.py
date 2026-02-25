@@ -1,14 +1,15 @@
 from datetime import datetime
+from data_processing_system.config.constants import DEFAULT_LOG_FILE_PATH, LOG_TIMESTAMP_FORMAT
 
 class Logger:
     """Simple file logger for processing events."""
 
-    def __init__(self, log_file_path="processing.log"):
+    def __init__(self, log_file_path=DEFAULT_LOG_FILE_PATH):
         self._log_file_path = log_file_path
         self._buffer = []
 
     def log(self, message):
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = datetime.now().strftime(LOG_TIMESTAMP_FORMAT)
         self._buffer.append(f"[{timestamp}] {message}")
 
     def flush(self):

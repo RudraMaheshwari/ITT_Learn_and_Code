@@ -1,4 +1,5 @@
 from datetime import datetime
+from data_processing_system.config.constants import DOUBLE_MULTIPLIER, SQUARE_EXPONENT
 
 class Record:
 
@@ -43,8 +44,8 @@ class Record:
             self._date = parsed_date.strftime(date_format)
 
     def compute_derived_values(self):
-        self._doubled_value = self._value * 2
-        self._squared_value = self._value ** 2
+        self._doubled_value = self._value * DOUBLE_MULTIPLIER
+        self._squared_value = self._value ** SQUARE_EXPONENT
 
     def to_dict(self):
         return {

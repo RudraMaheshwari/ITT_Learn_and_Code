@@ -1,9 +1,11 @@
 import random
 from datetime import datetime, timedelta
-
-MIN_VALUE = 10
-MAX_VALUE = 1000
-MAX_DATE_OFFSET_DAYS = 365
+from data_processing_system.config.constants import (
+    MIN_VALUE,
+    MAX_VALUE,
+    MAX_DATE_OFFSET_DAYS,
+    SAMPLE_DATE_FORMAT,
+)
 
 class SampleDataGenerator:
 
@@ -18,5 +20,5 @@ class SampleDataGenerator:
                 )
 
                 output_file.write(
-                    f"{record_id},{name},{value},{date.strftime('%Y-%m-%d')}\n"
+                    f"{record_id},{name},{value},{date.strftime(SAMPLE_DATE_FORMAT)}\n"
                 )

@@ -1,4 +1,13 @@
 from data_processing_system.config import ProcessorConfig
+from data_processing_system.config.constants import (
+    DEFAULT_RECORD_COUNT,
+    DEFAULT_INPUT_FILE,
+    DEFAULT_OUTPUT_JSON,
+    DEFAULT_OUTPUT_XML,
+    DEFAULT_OUTPUT_CSV,
+    DISPLAY_DATE_FORMAT,
+    FILTER_MIN_VALUE,
+)
 from data_processing_system.utils.io import FileReader, SampleDataGenerator
 from data_processing_system.utils.parsing import RecordParser
 from data_processing_system.utils.validation import RecordValidator
@@ -12,8 +21,8 @@ def create_processing_config():
     return ProcessorConfig(
         validate=True,
         transform=True,
-        date_format="%m/%d/%Y",
-        batch_size=50
+        date_format=DISPLAY_DATE_FORMAT,
+        batch_size=DEFAULT_RECORD_COUNT
     )
 
 def build_processing_service(config):
@@ -31,23 +40,23 @@ def display_results(statistics, filtered_records):
     print("Processing complete")
     print(f"Statistics: {statistics}")
     print("Exported to JSON, XML, and CSV")
-    print(f"Filtered records (value >= 100): {len(filtered_records)}")
+    print(f"Filtered records (value >= {FILTER_MIN_VALUE}): {len(filtered_records)}")
 
 def main():
-    SampleDataGenerator().generate("input.csv", 50)
+    SampleDataGenerator().generate(DEFAULT_INPUT_FILE, DEFAULT_RECORD_COUNT)
 
     config = create_processing_config()
     service = build_processing_service(config)
 
     records, statistics = service.process(
-        input_file="input.csv",
-        output_file="output.json"
+        input_file=DEFAULT_INPUT_FILE,
+        output_file=DEFAULT_OUTPUT_JSON
     )
 
-    XmlExporter().export(records, "output.xml")
-    CsvExporter().export(records, "output.csv")
+    XmlExporter().export(records, DEFAULT_OUTPUT_XML)
+    CsvExporter().export(records, DEFAULT_OUTPUT_CSV)
 
-    filtered_records = ValueFilter().filter_min(records, 100)
+    filtered_records = ValueFilter().filter_min(records, FILTER_MIN_VALUE)
 
     display_results(statistics, filtered_records)
 

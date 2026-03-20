@@ -1,66 +1,182 @@
 # ITT_Learn_and_Code
 
-**ITT_Learn_and_Code** is a structured learning and development repository built to help developers understand real-world software concepts through simple, clear, and practical examples.  
-The goal is to make complex topics easier by demonstrating them with hands-on code, best practices, and explanation-driven learning.
+Structured learning repo: practical examples, **OOP / SOLID refactors**, and clean coding habits.  
+Below are two **OOP Concepts** assignments (original specs in C#); the Python solutions live in subfolders.
+
+| Assignment | Folder | Themes |
+|------------|--------|--------|
+| Vehicle Management System | [`vehicle_management/`](vehicle_management/) | Encapsulation, inheritance, polymorphism, abstraction, clean structure |
+| Creator Monetization Platform | [`creator_monetization/`](creator_monetization/) | Strategy pattern, composition, OCP, multiple revenue streams |
+
+Run demos:
+
+```bash
+cd vehicle_management && python main.py
+cd creator_monetization && python main.py
+```
 
 ---
 
-## 🚀 What This Repository Offers
+## Assignment 1 — Vehicle Management System (OOP Refactor)
 
-- **Real-world coding examples**
-- **Clean and scalable code patterns**
-- **Step-by-step explanations for clarity**
-- **AI, ML, DevOps, and backend code samples**
-- **Debugging guides and architecture notes**
-- **Best practices for Python, APIs, Docker, and more**
+### Problem statement
+
+You are given a **Vehicle Management System** codebase that **violates multiple OOP principles and coding standards**. Your task is to **refactor** it to align with industry best practices.
+
+### Key focus areas
+
+1. Identify and fix violations related to **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
+2. Ensure the refactored codebase follows **proper coding standards and best practices**.
+
+### Original codebase (C#) — reference
+
+The starter code includes separate classes (`Car`, `Motorcycle`, `ElectricCar`), a `VehicleManager` with parallel lists and `object` + type checks, public fields, inconsistent naming, duplicated logic, and broken / inconsistent members (e.g. mixed `Start` / `start_engine`, wrong identifiers in some methods).
+
+<details>
+<summary><strong>Original C# excerpt (collapse)</strong></summary>
+
+```csharp
+public class Car
+{
+    public string make;
+    public string Model;
+    public int year_of_manufacture;
+    public double Price;
+    public double fuel_level;
+    public bool is_running;
+    public void set_price(double price) { Price = price; /* TODO: validation */ }
+    public void start_engine() { /* ... */ }
+    public void Stop() { IsRunning = false; /* wrong identifiers */ }
+    // ...
+}
+
+public class VehicleManager
+{
+    public List<Car> Cars = new List<Car>();
+    public List<Motorcycle> Motorcycles = new List<Motorcycle>();
+    public List<ElectricCar> ElectricCars = new List<ElectricCar>();
+
+    public void AddVehicle(object vehicle)
+    {
+        if (vehicle is Car) { Cars.Add((Car)vehicle); }
+        else if (vehicle is Motorcycle) { /* ... */ }
+        else if (vehicle is ElectricCar) { /* ... */ }
+    }
+    // display_all, calc_total_value, start_all_vehicles — each list typed separately
+}
+```
+
+</details>
+
+### What to fix (checklist)
+
+- Public mutable fields; inconsistent naming (`make` / `Model` / `MAKE`, etc.).
+- Duplicated start/stop/refuel patterns; electric vs fuel special cases without a clear model.
+- **Single polymorphic collection** instead of three lists + `is` / casts.
+- **Encapsulation**: validated price, bounded fuel/battery, no invalid external mutation.
+- Uniform **verbs** (`start`, `stop`) and one way to show vehicle info.
+
+### Python solution
+
+See **[`vehicle_management/README.md`](vehicle_management/README.md)** for layout, design mapping, and how the refactor addresses the above.
 
 ---
 
-## 📘 Purpose
+## Assignment 2 — Creator Monetization Platform (Refactoring & Design)
 
-This repository is created to:
-- Provide a single place to **learn and build together**  
-- Break down difficult concepts into **easy-to-understand examples**  
-- Help new and experienced developers practice **real industry-level coding standards**  
+### Problem statement
+
+You are building the **backend logic** for a **Creator Monetization Platform** (similar to Instagram, YouTube, or LinkedIn). Creators earn through multiple dynamic sources:
+
+- Brand deals  
+- Ad revenue  
+- Subscriptions  
+- Live gifts  
+
+The system evolved quickly and suffers from **inconsistent logic**, **duplication**, and **poor extensibility**.
+
+Your task: **refactor and redesign** using **OOP & SOLID** so it **scales with new monetization models**.
+
+### Your tasks
+
+**1. Identify design issues**
+
+- Public mutable fields and **if–else explosion** on earning type.
+- **Single** earning type limitation (cannot combine ads + subs + brand).
+- **No extensibility**; changes require editing core logic.
+- Violates **Open–Closed Principle (OCP)**.
+
+**2. Redesign the system**
+
+- Allow **multiple earning strategies per creator**.
+- Support **easy addition** of new earning types.
+- **Avoid** `if (type == …)` chains for earnings.
+- **Encapsulate** all data properly.
+- **Separate** earning logic from the **Creator** entity.
+
+**3. Introduce proper OOP design**
+
+- **Abstraction**
+- **Composition over inheritance** (where appropriate)
+- **Strategy pattern** (optional but recommended)
+
+**4. Real-world complexity**
+
+- A creator earns from **ads + subscription + brand deals** (and optionally more, e.g. live gifts).
+- Some earnings depend on **engagement rate**, **region**, and **season**.
+
+### Original codebase (C#) — reference
+
+<details>
+<summary><strong>Original C# excerpt (collapse)</strong></summary>
+
+```csharp
+public class Creator
+{
+    public string name;
+    public string earningType;
+    public double baseAmount;
+    public int views;
+    public int subscribers;
+
+    public double CalculateEarnings()
+    {
+        if (earningType == "ADS")
+            return views * 0.05;
+        else if (earningType == "SUBSCRIPTION")
+            return subscribers * 2;
+        else if (earningType == "BRAND")
+            return baseAmount;
+        return 0;
+    }
+}
+```
+
+</details>
+
+### Python solution
+
+See **[`creator_monetization/README.md`](creator_monetization/README.md)** for layout and how tasks map to code. Base rates match the original snippet when regional/season multipliers are neutral (`0.05` per view, `2` per subscriber, fixed brand amount).
 
 ---
 
-## 🧩 Who Is This For?
+## Repository purpose (general)
 
-- Students  
-- Beginners in coding  
-- Developers practicing for interviews  
-- Engineers exploring new technologies  
-- Anyone who wants to learn by doing
+- One place to **learn and build** with **readable, layered Python** examples.  
+- Topics can include APIs, tooling, and patterns; **OOP assignments above** are the current highlighted work.
 
 ---
 
-## 📂 Contents (Examples)
+## Who this is for
 
-- 🔹 Python utilities & scripts  
-- 🔹 API development examples  
-- 🔹 Docker & containerization demos  
-- 🔹 AI/ML small projects  
-- 🔹 Debugging & error explanation snippets  
-- 🔹 System design notes  
-- 🔹 Best coding practices & patterns  
-
-*(Actual content will grow over time.)*
+Students, interview practice, and anyone learning **OOP, SOLID, and clean structure** by reading working code.
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
-Contributions are welcome!  
-Feel free to submit pull requests, open issues, or suggest new topics to cover.
-
----
-
-## ⭐ Support
-
-If you find this helpful, give the repository a **star** — it helps others discover it and supports future updates.
+Pull requests and issues are welcome for new examples or clarifications.
 
 ---
 
-### **Learn. Build. Improve. Repeat.**
-**ITT_Learn_and_Code**
+**Learn. Build. Improve. Repeat.**

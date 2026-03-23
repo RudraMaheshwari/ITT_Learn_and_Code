@@ -3,6 +3,7 @@ from typing import Final
 
 AD_REVENUE_PER_VIEW: Final[float] = 0.05
 AD_ENGAGEMENT_WEIGHT: Final[float] = 0.25
+AD_ENGAGEMENT_BASE_MULTIPLIER: Final[float] = 1.0
 
 SUBSCRIPTION_REVENUE_PER_SUBSCRIBER: Final[float] = 2.0
 SUBSCRIPTION_ENGAGEMENT_WEIGHT: Final[float] = 0.1

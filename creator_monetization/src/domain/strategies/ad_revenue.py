@@ -1,5 +1,5 @@
 from __future__ import annotations
-from ...config.constants import AD_ENGAGEMENT_WEIGHT, AD_REVENUE_PER_VIEW
+from ...config.constants import AD_ENGAGEMENT_BASE_MULTIPLIER, AD_ENGAGEMENT_WEIGHT, AD_REVENUE_PER_VIEW
 from ...utils.factors import regional_multiplier, seasonal_multiplier
 from ..monetization_context import MonetizationContext
 from .earning_strategy import EarningStrategy
@@ -10,7 +10,10 @@ class AdRevenueStrategy(EarningStrategy):
 
     def calculate(self, context: MonetizationContext) -> float:
         base = context.views * AD_REVENUE_PER_VIEW
-        engagement_factor = 1.0 + AD_ENGAGEMENT_WEIGHT * context.engagement_rate
+        engagement_factor = (
+            AD_ENGAGEMENT_BASE_MULTIPLIER
+            + AD_ENGAGEMENT_WEIGHT * context.engagement_rate
+        )
         return (
             base
             * engagement_factor

@@ -24,3 +24,4 @@ python main.py
 | Duplicated start/stop/refuel | Shared base + `StoredEnergyPercent` |
 | Weak validation | `validated_price`, bounded energy, encapsulation demo in `main` |
 | I/O mixed into domain | Domain returns notice strings; `main` prints |
+

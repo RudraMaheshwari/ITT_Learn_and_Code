@@ -11,3 +11,4 @@ class Step:
 
     def run(self, state: WorkflowState) -> Any:
         raise NotImplementedError
+

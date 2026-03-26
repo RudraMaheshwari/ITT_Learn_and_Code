@@ -15,3 +15,4 @@ def seasonal_multiplier(season_name: str) -> float:
     return SEASON_MULTIPLIERS.get(
         season_name.upper(), SEASON_MULTIPLIERS[DEFAULT_SEASON_KEY]
     )
+

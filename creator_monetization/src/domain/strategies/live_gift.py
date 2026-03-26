@@ -17,3 +17,4 @@ class LiveGiftStrategy(EarningStrategy):
             * regional_multiplier(context.region)
             * seasonal_multiplier(context.season)
         )
+

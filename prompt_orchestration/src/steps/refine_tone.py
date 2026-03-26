@@ -16,3 +16,4 @@ class RefineToneStep(Step):
 
     def run(self, state: WorkflowState) -> Any:
         return f"[Tone={self._tone}] {state.current_payload}"
+

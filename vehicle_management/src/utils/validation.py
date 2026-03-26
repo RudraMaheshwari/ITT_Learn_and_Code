@@ -35,3 +35,4 @@ def percent_after_increase(current_percent: float, added_percent: float) -> floa
         raise ValueError(NEGATIVE_REFUEL_AMOUNT_ERROR)
     combined = current_percent + added_percent
     return min(combined, MAX_STORED_ENERGY_PERCENT)
+

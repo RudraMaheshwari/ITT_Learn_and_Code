@@ -23,3 +23,4 @@ class Creator:
             amount = source.calculate(context)
             rows.append((source.label(), amount))
         return tuple(rows)
+

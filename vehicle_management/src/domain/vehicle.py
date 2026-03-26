@@ -65,3 +65,4 @@ class Vehicle(ABC):
     @abstractmethod
     def summary_line(self) -> str:
         raise NotImplementedError
+

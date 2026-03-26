@@ -14,3 +14,4 @@ def require_unit_interval(label: str, value: float) -> None:
 def require_non_negative_amount(label: str, value: float) -> None:
     if value < 0.0:
         raise ValueError(f"{label} cannot be negative (got {value}).")
+

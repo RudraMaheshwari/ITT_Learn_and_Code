@@ -23,3 +23,4 @@ class TranslateStep(Step):
         if self._should_simulate_failure:
             raise RuntimeError(ERR_SIMULATED_TRANSLATION_FAILURE)
         return f"{TRANSLATED_PREFIX_FMT.format(lang=self._target_language)}{state.current_payload}"
+

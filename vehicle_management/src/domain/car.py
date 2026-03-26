@@ -12,3 +12,4 @@ class Car(FuelPoweredVehicle):
             model=self.model,
             price=self.price,
         )
+

@@ -21,3 +21,4 @@ class MonetizationContext:
         require_non_negative_int("live_gift_units", self.live_gift_units)
         object.__setattr__(self, "region", self.region.strip().upper())
         object.__setattr__(self, "season", self.season.strip().upper())
+

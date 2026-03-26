@@ -19,3 +19,4 @@ class SummarizeStep(Step):
         if len(full_text) <= self._maximum_summary_length:
             return f"{SUMMARY_PREFIX}{full_text}"
         return f"{SUMMARY_PREFIX}{full_text[:self._maximum_summary_length].rstrip()}..."
+

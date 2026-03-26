@@ -72,3 +72,4 @@ T = TypeVar("T")
 class WorkflowRunResult:
     output: Any
     state: WorkflowState
+

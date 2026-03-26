@@ -18,3 +18,4 @@ class EnrichWithContextStep(Step):
         if not self._context_text:
             return state.current_payload
         return f"{self._context_text}\n\n{state.current_payload}"
+

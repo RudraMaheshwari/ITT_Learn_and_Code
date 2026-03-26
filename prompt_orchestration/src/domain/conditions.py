@@ -40,3 +40,4 @@ class MetadataEqualsCondition(Condition):
 
     def evaluate(self, state: WorkflowState) -> bool:
         return state.metadata.get(self._metadata_key) == self._expected_value
+

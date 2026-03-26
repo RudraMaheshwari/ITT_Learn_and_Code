@@ -27,3 +27,4 @@ python main.py
 | Engagement, region, season | `MonetizationContext` + `REGION_MULTIPLIERS` / `SEASON_MULTIPLIERS` |
 
 Base rates match the original C# when multipliers are neutral: **$0.05/view**, **$2/subscriber**, brand = contracted amount.
+

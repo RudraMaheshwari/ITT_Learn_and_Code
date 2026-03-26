@@ -8,3 +8,4 @@ def energy_level_notice_line(
         quantity_label=quantity_label,
         level_percent=level_percent,
     )
+

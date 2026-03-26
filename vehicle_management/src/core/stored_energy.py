@@ -12,3 +12,4 @@ class StoredEnergyPercent:
     def add_percent(self, delta: float) -> float:
         self._percent = percent_after_increase(self._percent, delta)
         return self._percent
+

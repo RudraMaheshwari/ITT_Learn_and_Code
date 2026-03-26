@@ -42,3 +42,4 @@ class FuelPoweredVehicle(Vehicle, ABC):
             MSG_CANNOT_START_NO_FUEL,
             started,
         )
+

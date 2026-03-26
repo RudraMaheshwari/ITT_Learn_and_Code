@@ -10,3 +10,4 @@ class EarningStrategy(ABC):
     @abstractmethod
     def calculate(self, context: MonetizationContext) -> float:
         raise NotImplementedError
+

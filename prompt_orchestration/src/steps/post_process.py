@@ -24,3 +24,4 @@ class PostProcessStep(Step):
         if self._mode == "upper":
             return raw_text.upper()
         return raw_text.lower()
+

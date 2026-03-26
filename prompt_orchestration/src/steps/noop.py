@@ -13,3 +13,4 @@ class NoopStep(Step):
 
     def run(self, state: WorkflowState) -> Any:
         return state.current_payload
+

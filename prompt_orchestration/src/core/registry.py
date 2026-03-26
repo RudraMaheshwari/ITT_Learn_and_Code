@@ -38,6 +38,6 @@ class PluginRegistry(Generic[T]):
             raise KeyError(f"Unknown {self._kind}: {key}. Known: {registered_keys}") from registry_error
         return factory(config)
 
-
 step_registry: PluginRegistry[Any] = PluginRegistry(kind="step")
 condition_registry: PluginRegistry[Any] = PluginRegistry(kind="condition")
+

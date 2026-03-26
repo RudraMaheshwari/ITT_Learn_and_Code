@@ -30,3 +30,4 @@ python main.py
 1. Create a new file under `src/steps/`, implement `Step`.
 2. Register it via `@step_registry.register("YOUR_TYPE")`.
 3. Use `"type": "YOUR_TYPE"` in a `StepSpec`.
+

@@ -13,3 +13,4 @@ class GenerateStep(Step):
 
     def run(self, state: WorkflowState) -> Any:
         return f"{self._prefix}{state.current_payload}"
+

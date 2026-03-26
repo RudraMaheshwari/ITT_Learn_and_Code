@@ -36,3 +36,4 @@ TRACE_STEP_FALLBACK_START = "step_fallback_start"
 TRACE_CONDITION_EVALUATED = "condition_evaluated"
 ALLOWED_POST_PROCESS_MODES = {"strip", "upper", "lower"}
 DEMO_INITIAL_INPUT = "A waterproof hiking backpack with 30L capacity."
+

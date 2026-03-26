@@ -4,7 +4,7 @@ from ..config.constants import (
     TRACE_WORKFLOW_END,
     TRACE_WORKFLOW_START,
 )
-from ..core.executor import StepExecutor
+from ..core.executor import build_default_executor
 from ..core.tracing import utc_now
 from ..models.models import (
     TraceEvent,
@@ -17,7 +17,7 @@ from ..models.models import (
 class WorkflowOrchestrator:
     def __init__(self, tracer: Tracer | None = None) -> None:
         self._tracer = tracer
-        self._executor = StepExecutor(tracer=tracer)
+        self._executor = build_default_executor(tracer=tracer)
 
     def run(self, workflow: WorkflowSpec, initial_input: Any, metadata: dict[str, Any] | None = None) -> WorkflowRunResult:
         state = WorkflowState(current_payload=initial_input, metadata=metadata or {})

@@ -32,3 +32,4 @@ class Motorcycle(FuelPoweredVehicle):
             has_sidecar=self._has_sidecar,
             price=self.price,
         )
+

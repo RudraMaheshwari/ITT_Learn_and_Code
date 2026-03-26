@@ -14,3 +14,4 @@ class BrandDealStrategy(EarningStrategy):
 
     def calculate(self, context: MonetizationContext) -> float:
         return self._contracted_amount * regional_multiplier(context.region)
+

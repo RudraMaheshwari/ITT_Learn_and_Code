@@ -24,3 +24,4 @@ class VehicleInventory:
         for vehicle in self._vehicles:
             lines.extend(vehicle.start())
         return tuple(lines)
+

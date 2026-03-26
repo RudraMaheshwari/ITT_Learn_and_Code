@@ -11,3 +11,4 @@ __all__ = [
     "validated_price",
     "validated_stored_energy_percent",
 ]
+

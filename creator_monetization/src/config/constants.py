@@ -52,3 +52,4 @@ DEMO_SEASON_ALT: Final[str] = "WINTER"
 DEMO_SECOND_SCENARIO_HEADER: Final[str] = (
     "\n--- Same creator, different region/season (no code changes) ---"
 )
+

@@ -54,3 +54,4 @@ class ElectricCar(Vehicle):
             model=self.model,
             price=self.price,
         )
+

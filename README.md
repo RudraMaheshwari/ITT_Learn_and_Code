@@ -1,5 +1,11 @@
 # ITT_Learn_and_Code
 
+## Branch: Functions Assignments
+
+This branch contains assignments focused on functions, methods, and related programming concepts. The exercises here are designed to practice writing clean, reusable, and well-structured functions following best coding practices.
+
+---
+
 **ITT_Learn_and_Code** is a structured learning and development repository built to help developers understand real-world software concepts through simple, clear, and practical examples.  
 The goal is to make complex topics easier by demonstrating them with hands-on code, best practices, and explanation-driven learning.
 
@@ -19,33 +25,34 @@ The goal is to make complex topics easier by demonstrating them with hands-on co
 ## 📘 Purpose
 
 This repository is created to:
-- Provide a single place to **learn and build together**  
-- Break down difficult concepts into **easy-to-understand examples**  
-- Help new and experienced developers practice **real industry-level coding standards**  
+
+- Provide a single place to **learn and build together**
+- Break down difficult concepts into **easy-to-understand examples**
+- Help new and experienced developers practice **real industry-level coding standards**
 
 ---
 
 ## 🧩 Who Is This For?
 
-- Students  
-- Beginners in coding  
-- Developers practicing for interviews  
-- Engineers exploring new technologies  
+- Students
+- Beginners in coding
+- Developers practicing for interviews
+- Engineers exploring new technologies
 - Anyone who wants to learn by doing
 
 ---
 
 ## 📂 Contents (Examples)
 
-- 🔹 Python utilities & scripts  
-- 🔹 API development examples  
-- 🔹 Docker & containerization demos  
-- 🔹 AI/ML small projects  
-- 🔹 Debugging & error explanation snippets  
-- 🔹 System design notes  
-- 🔹 Best coding practices & patterns  
+- 🔹 Python utilities & scripts
+- 🔹 API development examples
+- 🔹 Docker & containerization demos
+- 🔹 AI/ML small projects
+- 🔹 Debugging & error explanation snippets
+- 🔹 System design notes
+- 🔹 Best coding practices & patterns
 
-*(Actual content will grow over time.)*
+_(Actual content will grow over time.)_
 
 ---
 
@@ -63,4 +70,5 @@ If you find this helpful, give the repository a **star** — it helps others dis
 ---
 
 ### **Learn. Build. Improve. Repeat.**
+
 **ITT_Learn_and_Code**

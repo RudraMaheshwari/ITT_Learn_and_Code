@@ -1,0 +1,33 @@
+EXPENSE_FILE_PATH = "expenses.txt"
+FIELD_SEPARATOR = ","
+
+MENU_ADD_EXPENSE = 1
+MENU_VIEW_EXPENSES = 2
+MENU_CLEAR_EXPENSES = 3
+MENU_EXIT = 4
+
+AMOUNT_DISPLAY_FORMAT = ".2f"
+CURRENCY_SYMBOL = "$"
+
+APP_TITLE = "=== Personal Expense Tracker ==="
+DIVIDER = "----------------------------"
+
+FILE_MODE_READ_APPEND = "a+"
+FILE_MODE_APPEND = "a"
+FILE_MODE_WRITE = "w"
+NEWLINE = "\n"
+
+EXPECTED_FIELD_COUNT = 2
+DESCRIPTION_INDEX = 0
+AMOUNT_INDEX = 1
+INITIAL_TOTAL = 0.0
+
+PROMPT_ENTER_CHOICE = "\nEnter choice: "
+PROMPT_DESCRIPTION = "Description: "
+PROMPT_AMOUNT = "Amount: "
+MSG_EXPENSE_SAVED = "Expense saved."
+MSG_NO_EXPENSES = "No expenses recorded yet."
+MSG_EXPENSES_CLEARED = "All expenses cleared."
+MSG_GOODBYE = "Goodbye!"
+LABEL_TOTAL = "Total"
+

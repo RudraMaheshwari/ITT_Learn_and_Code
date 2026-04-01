@@ -1,0 +1,33 @@
+DEVICE_ID_PRIMARY = "DEV1"
+DEVICE_STATUS_ACTIVE = "ACTIVE"
+DEVICE_STATUS_SUSPENDED = "SUSPENDED"
+
+WIFI_STATUS_CONNECTED = "CONNECTED"
+WIFI_STATUS_DISCONNECTED = "DISCONNECTED"
+
+MENU_WITHDRAW = 1
+MENU_CHECK_BALANCE = 2
+MENU_EXIT = 3
+
+MENU_LABEL_WITHDRAW = "Withdraw"
+MENU_LABEL_CHECK_BALANCE = "Check Balance"
+MENU_LABEL_EXIT = "Exit"
+
+MSG_WITHDRAWAL_SUCCESS = "Cash dispensed successfully."
+MSG_DEVICE_LOCKED = "Transaction failed: Device is locked."
+MSG_NO_CONNECTION = "Transaction failed: No network connection."
+MSG_INSUFFICIENT_FUNDS = "Transaction failed: Insufficient funds."
+MSG_GOODBYE = "Thank you. Goodbye!"
+
+PROMPT_ENTER_CHOICE = "\nEnter choice: "
+PROMPT_AMOUNT = "Enter withdrawal amount: "
+
+APP_TITLE = "=== ATM System ==="
+LABEL_ACCOUNT = "Account"
+LABEL_BALANCE = "Balance"
+CURRENCY_SYMBOL = "$"
+AMOUNT_DISPLAY_FORMAT = ".2f"
+
+DEMO_ACCOUNT_ID = "ACC001"
+DEMO_INITIAL_BALANCE = 500.0
+
